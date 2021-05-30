@@ -1,9 +1,9 @@
 
-RG_NAME=MyResourceGroupName
+RG_NAME=MjTestGroup
 RG_LOCATION=westeurope
 ADMIN_USERNAME=theadmin
 
-PROJECT_NAME=MyProjectName
+PROJECT_NAME=SonarQube
 ADMIN_PUB_KEY=`cat ~/.ssh/az_vm_rsa.pub`
 
 VM_IP := $(shell az vm show --resource-group $(RG_NAME) --name "$(PROJECT_NAME)-vm" --show-details --query publicIps --output tsv)

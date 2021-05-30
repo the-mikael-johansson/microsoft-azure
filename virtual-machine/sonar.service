@@ -1,0 +1,19 @@
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=sonar
+Group=sonar
+PermissionsStartOnly=true
+ExecStart=/bin/nohup /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+StandardOutput=syslog
+LimitNOFILE=131072
+LimitNPROC=8192
+TimeoutStartSec=5
+Restart=always
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
